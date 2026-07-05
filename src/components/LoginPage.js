@@ -76,16 +76,15 @@ function LoginPage() {
         }
       }
 
-      // 🔄 RESET PASSWORD
+      // 🔄 REQUEST RESET PASSWORD (kirim link ke email)
       else if (formType === 'reset') {
-        const res = await fetch(API.resetPassword, {
+        const res = await fetch(API.requestResetPassword, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            email: formData.email,
-            newPassword: formData.password
+            email: formData.email
           })
         });
 
@@ -171,7 +170,7 @@ function LoginPage() {
               />
             </div>
 
-            {formType !== 'reset' && (
+            {formType === 'login' && (
               <div className="form-group">
                 <label>Password</label>
                 <input
@@ -185,15 +184,15 @@ function LoginPage() {
               </div>
             )}
 
-            {formType === 'reset' && (
+            {formType === 'register' && (
               <div className="form-group">
-                <label>Password Baru</label>
+                <label>Password</label>
                 <input
                   type="password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  placeholder="Masukkan password baru"
+                  placeholder="Masukkan password"
                   required
                 />
               </div>
@@ -211,6 +210,12 @@ function LoginPage() {
                   required
                 />
               </div>
+            )}
+
+            {formType === 'reset' && (
+              <p style={{ fontSize: '0.9em', color: '#666', marginTop: '-8px', marginBottom: '16px' }}>
+                Masukkan email akun kamu. Kami akan kirim link untuk membuat password baru.
+              </p>
             )}
 
             {formType === 'login' && (
@@ -234,6 +239,17 @@ function LoginPage() {
               {formType === 'register' && 'Daftar'}
               {formType === 'reset' && 'Kirim Link Reset'}
             </button>
+
+            {formType === 'reset' && (
+              <button 
+                type="button" 
+                className="forgot-password"
+                onClick={() => setFormType('login')}
+                style={{ marginTop: '12px' }}
+              >
+                ← Kembali ke Login
+              </button>
+            )}
           </form>
 
           <div className="login-footer">

@@ -12,6 +12,7 @@ import FlashcardSystem from './components/FlashcardSystem';
 import DiscussionForum from './components/DiscussionForum';
 import AchievementSystem from './components/AchievementSystem';
 import StudyRecommendation from './components/StudyRecommendation';
+import ResetPasswordPage from './components/ResetPasswordPage';
 import { API } from './config/api';
 import './styles/App.css';
 
@@ -77,6 +78,9 @@ function App() {
         
         
         <Route path="/login" element={<LoginPage />} />
+
+
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         
         
         <Route path="/dashboard" element={
