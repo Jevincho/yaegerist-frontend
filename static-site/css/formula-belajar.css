@@ -1,0 +1,208 @@
+.formula-container {
+  min-height: 100vh;
+  background-color: orange;
+  padding: 40px 20px;
+}
+
+.formula-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 4px;
+}
+
+.formula-content h2 {
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 32px;
+  color: #333;
+}
+
+.logo-formula {
+  max-width: 160px;
+  margin-bottom: 40px;
+}
+
+.kotak {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  gap: 24px;
+  padding: 0px 50px;
+}
+
+.formula-card {
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.dalam-belajar,
+.dalam-berlatih,
+.dalam-bertanding {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  min-height: 500px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.dalam-belajar:hover,
+.dalam-berlatih:hover,
+.dalam-bertanding:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 20px;
+}
+
+.dalam-belajar img,
+.dalam-berlatih img,
+.dalam-bertanding img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.dalam-belajar h3,
+.dalam-berlatih h3,
+.dalam-bertanding h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ff6600;
+  text-align: center;
+}
+
+.dalam-belajar p,
+.dalam-berlatih p,
+.dalam-bertanding p {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.btn-action {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: auto;
+}
+
+.btn-action:hover {
+  background-color: #ff8800;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+}
+
+.back-button-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: white;
+  color: #ff6600;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid #ff6600;
+}
+
+.btn-back:hover {
+  background-color: #ff6600;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .kotak {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kotak {
+    grid-template-columns: 1fr;
+    padding: 0px 20px;
+  }
+  
+  .formula-content h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .logo-formula {
+    max-width: 120px;
+  }
+  
+  .dalam-belajar,
+  .dalam-berlatih,
+  .dalam-bertanding {
+    min-height: auto;
+    padding: 25px;
+  }
+  
+  .dalam-belajar img,
+  .dalam-berlatih img,
+  .dalam-bertanding img {
+    width: 150px;
+  }
+  
+  .dalam-belajar h3,
+  .dalam-berlatih h3,
+  .dalam-bertanding h3 {
+    font-size: 20px;
+  }
+  
+  .dalam-belajar p,
+  .dalam-berlatih p,
+  .dalam-bertanding p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .formula-container {
+    padding: 20px 10px;
+  }
+  
+  .formula-content {
+    padding: 20px 0;
+  }
+  
+  .formula-content h2 {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+  
+  .kotak {
+    padding: 0 10px;
+    gap: 15px;
+  }
+}

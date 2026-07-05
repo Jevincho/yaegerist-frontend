@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, #ec5b5b 40%, #ffffff 40%);
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.back-button {
+    position: fixed;
+    top: 90px;
+    left: 25px;
+    z-index: 1000;
+}
+
+.back-icon {
+    width: 35px; 
+    height: auto;
+    cursor: pointer;
+    filter: brightness(0) invert(1); 
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.back-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.container-smp{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    padding-top:80px;
+}
+
+.box-gambar-smp{
+    background:#e84c4c;
+    padding:15px;
+    border-radius:15px;
+    margin-top: -40px;
+}
+
+.img-smp{
+    width:420px;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.img-smp:hover{
+    transform:scale(1.05);
+    cursor:pointer;
+}
+
+.text-smp h1{
+    color:#e84c4c;
+    font-size:55px;
+    margin:0 0 15px 0;
+}
+
+.text-smp p{
+    width:420px;
+    font-size:18px;
+    color:#e66969;
+    line-height:28px;
+}
+
+.text-smp h3{
+    margin-top:25px;
+    font-size:18px;
+    color:#000;
+}
+
+.pilihan-kelas button{
+    background:#e84c4c;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    margin:5px;
+    cursor:pointer;
+    font-size:14px;
+    transition:0.2s;
+}
+
+.pilihan-kelas button:hover{
+    opacity:0.8;
+}
+
+.btn-daftar{
+    display:inline-block;
+    background:#e84c4c;
+    color:white;
+    padding:12px 30px;
+    border-radius:30px;
+    font-size:14px;
+    margin-top:20px;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:1px;
+    transition:0.3s;
+    margin-bottom: 20px;
+}
+
+.btn-daftar:hover{
+    opacity:0.8;
+    cursor:pointer;
+}
+
+
+.footer {
+    width: 100%;
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 28px 0; 
+    font-size: 14px;
+    font-weight: 500;
+    position: sticky;
+    top: 100vh; 
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - PROGRAM SMP
+   ============================================ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container-smp {
+        gap: 30px;
+        padding: 60px 30px;
+    }
+    
+    .box-gambar-smp {
+        padding: 12px;
+    }
+    
+    .img-smp {
+        width: 350px;
+    }
+    
+    .text-smp h1 {
+        font-size: 45px;
+    }
+    
+    .text-smp p {
+        width: 350px;
+        font-size: 16px;
+    }
+    
+    .back-button {
+        top: 70px;
+        left: 20px;
+    }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+    body {
+        background: #ec5b5b;
+    }
+    
+    .container-smp {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+    
+    .box-gambar-smp {
+        width: 100%;
+        max-width: 350px;
+        margin-top: 20px;
+    }
+    
+    .img-smp {
+        width: 100%;
+    }
+    
+    .text-smp {
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+    }
+    
+    .text-smp h1 {
+        font-size: 36px;
+        color: white;
+    }
+    
+    .text-smp p {
+        width: 100%;
+        font-size: 15px;
+        color: white;
+        line-height: 24px;
+    }
+    
+    .text-smp h3 {
+        font-size: 16px;
+        color: white;
+    }
+    
+    .pilihan-kelas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .pilihan-kelas button {
+        flex: 1;
+        min-width: 70px;
+    }
+    
+    .btn-daftar {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        padding: 14px 30px;
+    }
+    
+    .back-button {
+        top: 20px;
+        left: 15px;
+    }
+    
+    .back-icon {
+        width: 30px;
+    }
+    
+    .footer {
+        padding: 20px 0;
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .text-smp h1 {
+        font-size: 28px;
+    }
+    
+    .text-smp p {
+        font-size: 14px;
+    }
+    
+    .btn-daftar {
+        font-size: 13px;
+        padding: 12px 25px;
+    }
+}

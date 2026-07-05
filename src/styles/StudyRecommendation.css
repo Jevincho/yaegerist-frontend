@@ -1,0 +1,375 @@
+.recommendation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.recommendation-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.recommendation-header h1 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.insights-section {
+  margin-bottom: 3rem;
+}
+
+.insights-section h2 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.insight-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.insight-card h3 {
+  color: var(--text-dark);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.insight-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.insight-label {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.performance-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.performance-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.performance-section h3 {
+  margin-bottom: 1rem;
+}
+
+.performance-section.strong {
+  border-left: 4px solid var(--success-color);
+}
+
+.performance-section.weak {
+  border-left: 4px solid var(--warning-color);
+}
+
+.performance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.subject-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.average-score {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.trend {
+  font-size: 1.2rem;
+}
+
+.trend-improving {
+  color: var(--success-color);
+}
+
+.trend-declining {
+  color: var(--danger-color);
+}
+
+.trend-stable {
+  color: var(--text-light);
+}
+
+.recommendations-section {
+  margin-bottom: 3rem;
+}
+
+.recommendations-section h2 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recommendation-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.recommendation-card:hover {
+  transform: translateX(5px);
+}
+
+.recommendation-card.priority-high {
+  border-left: 4px solid var(--danger-color);
+}
+
+.recommendation-card.priority-medium {
+  border-left: 4px solid var(--warning-color);
+}
+
+.recommendation-card.priority-low {
+  border-left: 4px solid var(--primary-color);
+}
+
+.rec-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.rec-content {
+  flex: 1;
+}
+
+.rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.rec-header h3 {
+  color: var(--text-dark);
+}
+
+.priority-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+
+.priority-badge.high {
+  background: var(--danger-color);
+}
+
+.priority-badge.medium {
+  background: var(--warning-color);
+}
+
+.priority-badge.low {
+  background: var(--primary-color);
+}
+
+.rec-description {
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.rec-action {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.study-plan-section {
+  margin-bottom: 3rem;
+}
+
+.study-plan-section h2 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.study-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.week-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.week-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.week-header h3 {
+  margin-bottom: 0.3rem;
+}
+
+.week-header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.week-description {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.task-item:hover {
+  background: #e9ecef;
+}
+
+.task-day {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.task-details {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.task-icon {
+  font-size: 1.2rem;
+}
+
+.task-name {
+  color: var(--text-dark);
+  font-weight: 500;
+  flex: 1;
+}
+
+.task-duration {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tips-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.tips-section h2 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.tip-card {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 10px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.tip-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.tip-card p {
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-breakdown {
+    grid-template-columns: 1fr;
+  }
+
+  .study-plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rec-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

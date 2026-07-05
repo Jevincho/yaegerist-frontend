@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleprogramsd.css">
+    <title>PROGRAM SD</title>
+</head>
+<body>
+    </header>
+    <a href="../produkkami/produkkami.html" class="back-button">
+        <img src="../gambar/back.png" alt="Back" class="back-icon">
+    </a>
+    <div class="container-sd">
+
+    <div class="box-gambar-sd">
+        <img src="../gambar/newprogramsd.webp" class="img-sd">
+    </div>
+
+    <div class="text-sd">
+        <h1>Program SD</h1>
+        <p>
+            SobatGO yang masih duduk di sekolah dasar pasti mau kan jadi juara di sekolah dan masuk ke SMP favorit? Ganesha Operation bisa banget bantu kamu agar nilai rapormu meningkat, sehingga kamu bisa jadi juara di sekolah dan masuk SMP favorit. Kamu akan BELAJAR dengan pengajar yang akrab dan berkualitas, serta akan dibiasakan untuk BERLATIH mengerjakan berbagai variasi soal yang mirip dengan ujianmu di sekolah. Kamu juga akan BERTANDING dengan mengikuti Try Out melalui GO Expert yang bisa kamu akses di mana saja. Tunggu apa lagi? Yuk, gabung bersama Ganesha Operation! Juara sekolah dan SMP favorit sudah menunggumu!
+        </p>
+
+        <h3>Program ini tersedia untuk tingkat kelas :</h3>
+
+        <div class="pilihan-kelas">
+            <button>3 SD</button>
+            <button>4 SD</button>
+            <button>5 SD</button>
+            <button>6 SD</button>
+        </div>
+
+        <a href="https://wa.me/6282399339886" target="_blank" rel="noopener noreferrer" class="btn-daftar">DAFTAR SEKARANG</a>
+    </div>
+
+</div>
+
+    <footer class="footer">
+        <p>© 2025 Ganesha Operation. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        // Track button clicks
+        document.querySelectorAll('.pilihan-kelas button').forEach(button => {
+            button.addEventListener('click', function() {
+                const kelas = this.textContent;
+                showToast(`Anda memilih kelas ${kelas}`, 'info');
+                console.log('Selected:', kelas);
+            });
+        });
+    </script>
+</body>
+</html>

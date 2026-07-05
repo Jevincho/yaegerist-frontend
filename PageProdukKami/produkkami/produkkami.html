@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleprodukkami.css">
+    <title>PRODUK KAMI</title>
+</head>
+<body>
+    <div class="judul">
+        <h1>Program Pilihan Ganesha Operation</h1>
+        <p>Berbagai Macam Pilihan Program Sesuai dengan Kebutuhanmu</p>
+    </div>
+
+
+    <div class="card-group">
+        <div class="card" onclick="window.location.href='../sd/programsd.html'">
+            <img src="../gambar/newprogramsd.webp" alt="program sd">
+            <div class="layer"></div>
+            <div class="info">
+                <h1>PROGRAM SD</h1>
+                <p>
+                    Program ini dibuat khusus untuk SobatGO yang masih duduk
+                    di sekolah dasar agar bisa jadi juara di sekolah dan masuk
+                    ke SMP favorit.
+                </p>
+                <a href="../sd/programsd.html" class="btn">SELENGKAPNYA</a>
+            </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='../smp/programsmp.html'">
+            <img src="../gambar/newprogramsmp.webp" alt="program smp">
+            <div class="layer"></div>
+            <div class="info">
+                <h1>PROGRAM SMP</h1>
+                <p>
+                    Program ini dibuat khusus untuk SobatGO yang masih duduk 
+                    di bangku SMP agar bisa jadi juara di sekolah dan masuk 
+                    ke SMA favorit.
+                </p>
+                <a href="../smp/programsmp.html" class="btn">SELENGKAPNYA</a>
+            </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='../sma/programsma.html'">
+            <img src="../gambar/newprogramsma.webp" alt="program sma">
+            <div class="layer"></div>
+            <div class="info">
+                <h1>PROGRAM SMA</h1>
+                <p>
+                    Untuk bisa mencapai target akademikmu BELAJAR aja enggak 
+                    cukup! Kamu harus imbangi dengan sering BERLATIH dan 
+                    BERTANDING. Ganesha Operation bisa bantu kamu untuk jadi 
+                    juara di sekolah dan masuk PTN impian!
+                </p>
+                <a href="../sma/programsma.html" class="btn">SELENGKAPNYA</a>
+            </div>
+        </div>
+        
+    <img src="../gambar/newfaq2.webp" alt="BA GANESHA OPERATION" class="foto-kanan">
+<footer class="footer">
+    <p>© 2025 Ganesha Operation. All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript Files -->
+<script src="../../js/animations.js"></script>
+<script src="../../js/main.js"></script>
+<script>
+    // Card click tracking
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function() {
+            const programName = this.querySelector('h1').textContent;
+            console.log('Navigating to:', programName);
+        });
+    });
+    
+    // Foto kanan click handler
+    const fotoKanan = document.querySelector('.foto-kanan');
+    if (fotoKanan) {
+        fotoKanan.addEventListener('click', function() {
+            window.open('https://wa.me/6282399339886?text=Halo, saya tertarik dengan Ganesha Operation!', '_blank');
+        });
+        
+        fotoKanan.style.cursor = 'pointer';
+        fotoKanan.title = 'Hubungi kami via WhatsApp';
+    }
+</script>
+</body>
+</html>

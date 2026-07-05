@@ -1,0 +1,363 @@
+.achievement-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.achievement-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.achievement-header h1 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.achievement-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 1rem 2rem;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.tab-btn:hover {
+  border-color: var(--primary-color);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-color: transparent;
+}
+
+.achievements-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.big-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.small-text {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.achievements-section {
+  margin-bottom: 3rem;
+}
+
+.achievements-section h3 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.achievement-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-card.unlocked {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 2px solid var(--primary-color);
+}
+
+.achievement-card.locked {
+  opacity: 0.7;
+}
+
+.achievement-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-icon.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.achievement-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.achievement-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-points {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.unlocked-badge {
+  background: var(--success-color);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.leaderboard-podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  margin: 2rem 0 3rem;
+  flex-wrap: wrap;
+}
+
+.podium-place {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  min-width: 150px;
+}
+
+.place-1 {
+  order: 2;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  transform: scale(1.1);
+}
+
+.place-2 {
+  order: 1;
+  background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+}
+
+.place-3 {
+  order: 3;
+  background: linear-gradient(135deg, #cd7f32, #e6a657);
+}
+
+.podium-rank {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.podium-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.podium-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.podium-points {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.leaderboard-table {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+.leaderboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th {
+  background: #f8f9fa;
+  padding: 1rem;
+  text-align: left;
+  color: var(--text-dark);
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.leaderboard-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: var(--text-dark);
+}
+
+.current-user {
+  background: #f0f9ff;
+  font-weight: 600;
+}
+
+.rank-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+.you-badge {
+  background: var(--success-color);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card .stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card .stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+}
+
+.milestones-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.milestones-section h3 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.milestones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.milestone-item {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.milestone-info strong {
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.milestone-info p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.milestone-progress {
+  min-width: 200px;
+  flex: 1;
+}
+
+.milestone-progress span {
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leaderboard-podium {
+    flex-direction: column;
+  }
+
+  .podium-place {
+    width: 100%;
+  }
+
+  .place-1, .place-2, .place-3 {
+    order: initial;
+  }
+
+  .milestone-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .milestone-progress {
+    min-width: 100%;
+  }
+}
