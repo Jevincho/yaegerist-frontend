@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -35,6 +36,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       title: 'Ganesha Operation - Platform Belajar'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          to: '.',
+          globOptions: {
+            ignore: ['**/index.html'], // sudah di-handle HtmlWebpackPlugin, jangan di-copy dobel
+          },
+        },
+      ],
     }),
     new webpack.DefinePlugin({
       'process.env.REACT_APP_API_URL': JSON.stringify(
