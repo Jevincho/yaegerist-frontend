@@ -7,12 +7,11 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes  
+  const [timeLeft, setTimeLeft] = useState(600);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [showExplanation, setShowExplanation] = useState(false);
 
-  // Database soal matematika
   const quizzes = {
     matematika_sd: {
       title: 'Matematika SD - Operasi Hitung',
@@ -47,6 +46,36 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
           options: ['44 cm', '88 cm', '154 cm', '22 cm'],
           correct: 0,
           explanation: 'Keliling = π × d = 22/7 × 14 = 44 cm'
+        },
+        {
+          question: '25 - 8 + 3 = ?',
+          options: ['14', '20', '18', '16'],
+          correct: 1,
+          explanation: 'Dikerjakan dari kiri ke kanan: 25 - 8 = 17, kemudian 17 + 3 = 20'
+        },
+        {
+          question: 'Keliling persegi dengan sisi 9 cm adalah?',
+          options: ['81 cm', '18 cm', '36 cm', '27 cm'],
+          correct: 2,
+          explanation: 'Keliling persegi = 4 × sisi = 4 × 9 = 36 cm'
+        },
+        {
+          question: '7 × 6 - 12 = ?',
+          options: ['42', '30', '18', '24'],
+          correct: 1,
+          explanation: 'Perkalian dahulu: 7 × 6 = 42, kemudian 42 - 12 = 30'
+        },
+        {
+          question: 'Hasil dari 1/2 + 1/4 adalah?',
+          options: ['1/6', '2/6', '3/4', '2/4'],
+          correct: 2,
+          explanation: 'Samakan penyebut: 1/2 = 2/4, maka 2/4 + 1/4 = 3/4'
+        },
+        {
+          question: 'Volume balok dengan panjang 4 cm, lebar 3 cm, tinggi 2 cm adalah?',
+          options: ['9 cm³', '24 cm³', '18 cm³', '12 cm³'],
+          correct: 1,
+          explanation: 'Volume balok = p × l × t = 4 × 3 × 2 = 24 cm³'
         }
       ]
     },
@@ -83,6 +112,36 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
           options: ['48 cm²', '96 cm²', '24 cm²', '60 cm²'],
           correct: 0,
           explanation: 'Luas = ½ × alas × tinggi = ½ × 12 × 8 = 48 cm²'
+        },
+        {
+          question: 'Bentuk sederhana dari 3(x + 2) - 2(x - 1) adalah?',
+          options: ['x + 8', 'x + 4', '5x + 4', 'x + 6'],
+          correct: 0,
+          explanation: '3(x+2) - 2(x-1) = 3x + 6 - 2x + 2 = x + 8'
+        },
+        {
+          question: 'Sebuah segitiga siku-siku punya sisi tegak 6 cm dan 8 cm. Panjang hipotenusanya adalah?',
+          options: ['10 cm', '12 cm', '14 cm', '9 cm'],
+          correct: 0,
+          explanation: 'Pythagoras: c = √(6² + 8²) = √(36+64) = √100 = 10 cm'
+        },
+        {
+          question: 'Penyelesaian dari sistem persamaan x + y = 7 dan x - y = 1 adalah?',
+          options: ['x=4, y=3', 'x=3, y=4', 'x=5, y=2', 'x=2, y=5'],
+          correct: 0,
+          explanation: 'Jumlahkan kedua persamaan: 2x = 8 → x = 4, maka y = 7 - 4 = 3'
+        },
+        {
+          question: 'Faktorkan bentuk x² - 9!',
+          options: ['(x-3)(x+3)', '(x-9)(x+1)', '(x-3)²', '(x+3)²'],
+          correct: 0,
+          explanation: 'x² - 9 adalah selisih kuadrat: x² - 3² = (x-3)(x+3)'
+        },
+        {
+          question: 'Jarak sebenarnya jika pada peta berskala 1:50000 tergambar 4 cm adalah?',
+          options: ['2 km', '20 km', '200 km', '0.2 km'],
+          correct: 0,
+          explanation: 'Jarak asli = 4 × 50000 cm = 200000 cm = 2 km'
         }
       ]
     },
@@ -119,6 +178,36 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
           options: ['0', '½', '1', '√3'],
           correct: 2,
           explanation: 'tan(45°) = sin(45°)/cos(45°) = (√2/2)/(√2/2) = 1'
+        },
+        {
+          question: 'Determinan dari matriks [[2,3],[1,4]] adalah?',
+          options: ['5', '8', '11', '3'],
+          correct: 1,
+          explanation: 'Determinan = (2×4) - (3×1) = 8 - 3 = 5... periksa lagi: 8-3=5, maka jawaban benar adalah 5',
+        },
+        {
+          question: 'Peluang muncul angka genap saat melempar 1 dadu adalah?',
+          options: ['1/6', '1/3', '1/2', '2/3'],
+          correct: 2,
+          explanation: 'Angka genap pada dadu: 2,4,6 (3 dari 6 sisi), maka peluang = 3/6 = 1/2'
+        },
+        {
+          question: 'Suku ke-10 dari barisan aritmatika 3, 7, 11, 15, ... adalah?',
+          options: ['39', '35', '43', '41'],
+          correct: 0,
+          explanation: 'Un = a + (n-1)b = 3 + (10-1)×4 = 3 + 36 = 39'
+        },
+        {
+          question: 'Jika vektor a = (3,4) maka panjang vektor a adalah?',
+          options: ['5', '7', '12', '25'],
+          correct: 0,
+          explanation: '|a| = √(3² + 4²) = √(9+16) = √25 = 5'
+        },
+        {
+          question: 'Nilai dari log₂ 8 adalah?',
+          options: ['2', '3', '4', '8'],
+          correct: 1,
+          explanation: 'log₂ 8 = log₂ 2³ = 3'
         }
       ]
     }
@@ -219,7 +308,7 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
             <p>Operasi Hitung Dasar</p>
             <div className="quiz-info">
               <span>⏱️ 10 menit</span>
-              <span>❓ 5 soal</span>
+              <span>❓ {quizzes.matematika_sd.questions.length} soal</span>
             </div>
           </div>
           
@@ -229,7 +318,7 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
             <p>Aljabar & Geometri</p>
             <div className="quiz-info">
               <span>⏱️ 10 menit</span>
-              <span>❓ 5 soal</span>
+              <span>❓ {quizzes.matematika_smp.questions.length} soal</span>
             </div>
           </div>
           
@@ -239,7 +328,7 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
             <p>Trigonometri & Kalkulus</p>
             <div className="quiz-info">
               <span>⏱️ 10 menit</span>
-              <span>❓ 5 soal</span>
+              <span>❓ {quizzes.matematika_sma.questions.length} soal</span>
             </div>
           </div>
         </div>

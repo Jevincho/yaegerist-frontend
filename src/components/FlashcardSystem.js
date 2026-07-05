@@ -10,7 +10,6 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
   const [difficulty, setDifficulty] = useState(null);
   const [showResults, setShowResults] = useState(false);
 
-  // Flashcard decks dengan Spaced Repetition
   const flashcardDecks = {
     matematika_rumus: {
       title: 'Rumus Matematika Penting',
@@ -46,6 +45,31 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
           front: 'Teorema Sudut Segitiga',
           back: '∠A + ∠B + ∠C = 180°\n\nJumlah sudut dalam segitiga adalah 180 derajat',
           example: 'Jika ∠A = 60° dan ∠B = 70°:\n∠C = 180° - 60° - 70° = 50°'
+        },
+        {
+          front: 'Luas Segitiga',
+          back: 'L = ½ × alas × tinggi',
+          example: 'Alas 10 cm, tinggi 6 cm:\nL = ½ × 10 × 6 = 30 cm²'
+        },
+        {
+          front: 'Rumus Jarak Dua Titik',
+          back: 'd = √[(x₂-x₁)² + (y₂-y₁)²]',
+          example: 'Titik (1,2) dan (4,6):\nd = √[(4-1)² + (6-2)²] = √(9+16) = √25 = 5'
+        },
+        {
+          front: 'Deret Aritmatika',
+          back: 'Un = a + (n-1)b\n\nDimana:\na = suku pertama\nb = beda\nn = urutan suku',
+          example: 'Barisan 2,5,8,11,...\nU10 = 2 + (10-1)×3 = 2 + 27 = 29'
+        },
+        {
+          front: 'Rumus Diskriminan',
+          back: 'D = b² - 4ac\n\nD > 0: 2 akar berbeda\nD = 0: 1 akar kembar\nD < 0: tidak ada akar real',
+          example: 'Untuk x² + 2x + 1 = 0:\nD = 2² - 4(1)(1) = 4 - 4 = 0 (akar kembar)'
+        },
+        {
+          front: 'Volume Tabung',
+          back: 'V = πr²t\n\nDimana:\nr = jari-jari alas\nt = tinggi tabung',
+          example: 'r = 7 cm, t = 10 cm:\nV = 22/7 × 7² × 10 = 1540 cm³'
         }
       ]
     },
@@ -78,6 +102,36 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
           front: 'Energi Potensial',
           back: 'Ep = m × g × h\n\nEnergi karena posisi/ketinggian',
           example: 'Massa 5 kg, tinggi 10 m, g = 10 m/s²:\nEp = 5 × 10 × 10 = 500 J'
+        },
+        {
+          front: 'Hukum Ohm',
+          back: 'V = I × R\n\nDimana:\nV = tegangan (volt)\nI = arus (ampere)\nR = hambatan (ohm)',
+          example: 'I = 2A, R = 5Ω:\nV = 2 × 5 = 10 volt'
+        },
+        {
+          front: 'Hukum Kekekalan Energi',
+          back: 'Energi tidak dapat diciptakan atau dimusnahkan, hanya berubah bentuk',
+          example: 'Energi potensial buah jatuh berubah jadi energi kinetik saat mendekati tanah'
+        },
+        {
+          front: 'Usaha (Kerja)',
+          back: 'W = F × s\n\nDimana:\nF = gaya\ns = perpindahan',
+          example: 'Gaya 20N mendorong benda sejauh 5m:\nW = 20 × 5 = 100 Joule'
+        },
+        {
+          front: 'Hukum Archimedes',
+          back: 'Benda yang dicelupkan ke fluida akan mengalami gaya apung sebesar berat fluida yang dipindahkan',
+          example: 'Kapal besi bisa mengapung karena bentuknya membuat volume air yang dipindahkan besar'
+        },
+        {
+          front: 'Percepatan Gravitasi',
+          back: 'g ≈ 9.8 m/s² (atau dibulatkan 10 m/s²)\n\nPercepatan benda jatuh bebas di permukaan bumi',
+          example: 'Benda jatuh bebas selama 2 detik:\nv = g × t = 10 × 2 = 20 m/s'
+        },
+        {
+          front: 'Hukum Kekekalan Momentum',
+          back: 'Total momentum sebelum tumbukan = total momentum sesudah tumbukan (jika tidak ada gaya luar)',
+          example: 'Dua bola bertabrakan, total momentum sistem tetap sama sebelum dan sesudah tabrakan'
         }
       ]
     },
@@ -110,6 +164,36 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
           front: 'Future Tense (will)',
           back: 'S + will + V1 + O\n\nDigunakan untuk rencana masa depan',
           example: 'I will study English tomorrow.\nWe will go to Bali next week.'
+        },
+        {
+          front: 'Past Continuous',
+          back: 'S + was/were + V-ing + O\n\nDigunakan untuk kejadian yang sedang berlangsung di masa lalu',
+          example: 'I was studying when she called.\nThey were playing football at 4 PM yesterday.'
+        },
+        {
+          front: 'Past Perfect',
+          back: 'S + had + V3 + O\n\nDigunakan untuk kejadian yang sudah selesai sebelum kejadian lain di masa lalu',
+          example: 'I had finished my homework before he arrived.\nShe had left when I got there.'
+        },
+        {
+          front: 'Passive Voice',
+          back: 'S + to be + V3 (+ by O)\n\nDigunakan saat subjek dikenai tindakan, bukan melakukan tindakan',
+          example: 'The book was written by him.\nThe cake is being baked.'
+        },
+        {
+          front: 'Modal Verbs (can, must, should)',
+          back: 'S + modal + V1\n\ncan = kemampuan/izin\nmust = keharusan\nshould = saran',
+          example: 'You must finish the task.\nYou should study harder.'
+        },
+        {
+          front: 'Conditional Sentence Type 1',
+          back: 'If + Simple Present, S + will + V1\n\nDigunakan untuk kondisi yang mungkin terjadi',
+          example: 'If it rains, I will bring an umbrella.'
+        },
+        {
+          front: 'Comparative & Superlative',
+          back: 'Comparative: adjective + er / more + adjective\nSuperlative: the + adjective + est / the most + adjective',
+          example: 'She is taller than me.\nHe is the smartest student in class.'
         }
       ]
     },
@@ -142,6 +226,36 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
           front: 'Membran Sel',
           back: 'Lapisan pelindung sel\n\nBersifat semipermeabel (selektif permeabel)',
           example: 'Mengatur keluar masuknya zat:\nO₂ masuk, CO₂ keluar'
+        },
+        {
+          front: 'Retikulum Endoplasma (RE)',
+          back: 'RE Kasar: ditempeli ribosom, sintesis protein\nRE Halus: tanpa ribosom, sintesis lipid',
+          example: 'RE kasar membantu mengangkut protein hasil sintesis ribosom ke bagian sel lain'
+        },
+        {
+          front: 'Badan Golgi',
+          back: 'Organel yang mengemas dan mendistribusikan protein serta lipid ke luar sel',
+          example: 'Seperti "kantor pos sel" yang mengemas produk sebelum dikirim keluar sel'
+        },
+        {
+          front: 'Lisosom',
+          back: 'Organel pencernaan sel, berisi enzim untuk mencerna partikel/organel rusak',
+          example: 'Menghancurkan bakteri yang masuk ke dalam sel darah putih (fagositosis)'
+        },
+        {
+          front: 'Vakuola',
+          back: 'Organel penyimpan air, makanan, dan zat sisa\n\nBerukuran besar pada sel tumbuhan',
+          example: 'Vakuola besar membantu tumbuhan menjaga tekanan turgor agar tetap tegak'
+        },
+        {
+          front: 'Dinding Sel',
+          back: 'Lapisan kaku di luar membran sel, terbuat dari selulosa\n\nHanya ada pada sel tumbuhan',
+          example: 'Memberi bentuk tetap dan perlindungan tambahan pada sel tumbuhan'
+        },
+        {
+          front: 'Sitoplasma',
+          back: 'Cairan sel tempat organel-organel berada dan reaksi metabolisme terjadi',
+          example: 'Glikolisis (tahap awal respirasi sel) terjadi di sitoplasma'
         }
       ]
     }
@@ -182,17 +296,16 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
         setIsFlipped(false);
         setDifficulty(null);
       } else {
-        finishReview(updatedReviewedCards); // kirim data terbaru
+        finishReview(updatedReviewedCards);
       }
     }, 1000);
   };
 
   const calculateNextReview = (rating) => {
-    // Simple spaced repetition intervals
     const intervals = {
-      hard: 1, // 1 day
-      medium: 3, // 3 days
-      easy: 7 // 7 days
+      hard: 1,
+      medium: 3,
+      easy: 7
     };
     
     const days = intervals[rating];
