@@ -2,6 +2,18 @@ import React, { useState, useEffect } from 'react';
 import '../styles/QuizSystem.css';
 import { API } from "../config/api";
 
+// Helper: acak array pakai Fisher-Yates shuffle
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+const QUESTIONS_PER_QUIZ = 5;
+
 const QuizSystem = ({ studentData, updateStudentData }) => {
   const [currentQuiz, setCurrentQuiz] = useState(null);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -182,8 +194,8 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
         {
           question: 'Determinan dari matriks [[2,3],[1,4]] adalah?',
           options: ['5', '8', '11', '3'],
-          correct: 1,
-          explanation: 'Determinan = (2×4) - (3×1) = 8 - 3 = 5... periksa lagi: 8-3=5, maka jawaban benar adalah 5',
+          correct: 0,
+          explanation: 'Determinan = (2×4) - (3×1) = 8 - 3 = 5'
         },
         {
           question: 'Peluang muncul angka genap saat melempar 1 dadu adalah?',
@@ -223,7 +235,10 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
   }, [timeLeft, currentQuiz, quizCompleted]);
 
   const startQuiz = (quizType) => {
-    setCurrentQuiz(quizzes[quizType]);
+    const original = quizzes[quizType];
+    const randomQuestions = shuffleArray(original.questions).slice(0, QUESTIONS_PER_QUIZ);
+
+    setCurrentQuiz({ ...original, questions: randomQuestions });
     setCurrentQuestion(0);
     setScore(0);
     setTimeLeft(600);
@@ -308,7 +323,7 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
             <p>Operasi Hitung Dasar</p>
             <div className="quiz-info">
               <span>⏱️ 10 menit</span>
-              <span>❓ {quizzes.matematika_sd.questions.length} soal</span>
+              <span>❓ {QUESTIONS_PER_QUIZ} soal (acak dari {quizzes.matematika_sd.questions.length})</span>
             </div>
           </div>
           
@@ -318,7 +333,7 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
             <p>Aljabar & Geometri</p>
             <div className="quiz-info">
               <span>⏱️ 10 menit</span>
-              <span>❓ {quizzes.matematika_smp.questions.length} soal</span>
+              <span>❓ {QUESTIONS_PER_QUIZ} soal (acak dari {quizzes.matematika_smp.questions.length})</span>
             </div>
           </div>
           
@@ -328,7 +343,7 @@ const QuizSystem = ({ studentData, updateStudentData }) => {
             <p>Trigonometri & Kalkulus</p>
             <div className="quiz-info">
               <span>⏱️ 10 menit</span>
-              <span>❓ {quizzes.matematika_sma.questions.length} soal</span>
+              <span>❓ {QUESTIONS_PER_QUIZ} soal (acak dari {quizzes.matematika_sma.questions.length})</span>
             </div>
           </div>
         </div>

@@ -2,6 +2,18 @@ import React, { useState, useEffect } from 'react';
 import '../styles/FlashcardSystem.css';
 import { API } from "../config/api";
 
+// Helper: acak array pakai Fisher-Yates shuffle
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+const CARDS_PER_SESSION = 5;
+
 const FlashcardSystem = ({ studentData, updateStudentData }) => {
   const [selectedDeck, setSelectedDeck] = useState(null);
   const [currentCard, setCurrentCard] = useState(0);
@@ -262,8 +274,10 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
   };
 
   const selectDeck = (deckKey) => {
-    const deck = flashcardDecks[deckKey];
-    setSelectedDeck({ ...deck, key: deckKey });
+    const original = flashcardDecks[deckKey];
+    const randomCards = shuffleArray(original.cards).slice(0, CARDS_PER_SESSION);
+
+    setSelectedDeck({ ...original, key: deckKey, cards: randomCards });
     setCurrentCard(0);
     setIsFlipped(false);
     setReviewedCards([]);
@@ -339,6 +353,11 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
   };
 
   const restartDeck = () => {
+    // Ambil ulang set kartu random baru dari deck yang sama
+    const original = flashcardDecks[selectedDeck.key];
+    const randomCards = shuffleArray(original.cards).slice(0, CARDS_PER_SESSION);
+
+    setSelectedDeck({ ...original, key: selectedDeck.key, cards: randomCards });
     setCurrentCard(0);
     setIsFlipped(false);
     setReviewedCards([]);
@@ -361,7 +380,7 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
               <h3>{deck.title}</h3>
               <p className="deck-category">{deck.category}</p>
               <div className="deck-info">
-                <span>📇 {deck.cards.length} kartu</span>
+                <span>📇 {CARDS_PER_SESSION} kartu (acak dari {deck.cards.length})</span>
               </div>
             </div>
           ))}
@@ -447,7 +466,7 @@ const FlashcardSystem = ({ studentData, updateStudentData }) => {
 
           <div className="results-actions">
             <button className="btn-primary" onClick={restartDeck}>
-              🔄 Review Lagi
+              🔄 Review Lagi (Set Baru)
             </button>
             <button
               className="btn-secondary"
